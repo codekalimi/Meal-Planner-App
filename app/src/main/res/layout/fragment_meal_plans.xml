@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="60dp"
+    tools:context=".ui.MealPlansFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_meal_plans_favourites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_row_shape_rectangle"
+            android:layout_marginTop="4dp"
+            android:elevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_favourite_meals_title"
+                style="@style/MyMealPlannerTextStyle.Titles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/meal_plans_favourites_title"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_show_more_favourite_meals"
+                app:layout_constraintEnd_toStartOf="@+id/bt_show_more_favourite_meals"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/bt_show_more_favourite_meals"
+                style="@style/MyMealPlannerTextButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:elevation="6dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/meal_plans_show_more_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_favourite_meal_cards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:paddingHorizontal="1dp"
+                android:stretchMode="columnWidth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bt_show_more_favourite_meals"
+                app:layout_constraintStart_toStartOf="@+id/tv_favourite_meals_title"
+                app:layout_constraintTop_toBottomOf="@+id/bt_show_more_favourite_meals"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_meal_plans_diet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_row_shape_rectangle"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/cl_meal_plans_favourites"
+            app:layout_constraintStart_toStartOf="@+id/cl_meal_plans_favourites"
+            app:layout_constraintTop_toBottomOf="@+id/cl_meal_plans_favourites">
+
+            <TextView
+                android:id="@+id/tv_diet_meals_title"
+                style="@style/MyMealPlannerTextStyle.Titles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/meal_plans_diet_title"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_show_more_diet_meals"
+                app:layout_constraintEnd_toStartOf="@+id/bt_show_more_diet_meals"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/bt_show_more_diet_meals"
+                style="@style/MyMealPlannerTextButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:elevation="6dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/meal_plans_show_more_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_diet_meal_cards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:paddingHorizontal="1dp"
+                android:stretchMode="columnWidth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bt_show_more_diet_meals"
+                app:layout_constraintStart_toStartOf="@+id/tv_diet_meals_title"
+                app:layout_constraintTop_toBottomOf="@+id/bt_show_more_diet_meals" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_meal_plans_veggies"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            android:background="@drawable/table_row_shape_rectangle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cl_meal_plans_diet"
+            app:layout_constraintStart_toStartOf="@+id/cl_meal_plans_diet"
+            app:layout_constraintTop_toBottomOf="@+id/cl_meal_plans_diet">
+
+            <TextView
+                android:id="@+id/tv_veggie_meals_title"
+                style="@style/MyMealPlannerTextStyle.Titles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/meal_plans_veggies_title"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_show_more_veggie_meals"
+                app:layout_constraintEnd_toStartOf="@+id/bt_show_more_veggie_meals"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/bt_show_more_veggie_meals"
+                style="@style/MyMealPlannerTextButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:elevation="6dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/meal_plans_show_more_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_veggie_meal_cards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:paddingHorizontal="1dp"
+                android:stretchMode="columnWidth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bt_show_more_veggie_meals"
+                app:layout_constraintStart_toStartOf="@+id/tv_veggie_meals_title"
+                app:layout_constraintTop_toBottomOf="@+id/bt_show_more_veggie_meals"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

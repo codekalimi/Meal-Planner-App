@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="8dp"
+    android:layout_marginBottom="60dp"
+    tools:context=".ui.RecipeNutritionalFactsFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_shape_rectangle" >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_servings_data"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:elevation="4dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_reset_ingredients"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:alpha="1"
+                android:background="@drawable/button_shape_circle"
+                android:elevation="6dp"
+                android:src="@mipmap/ic_reset"
+                android:stateListAnimator="@animator/fab_raise"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_servings_label"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_servings_label"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_servings_number"
+                style="@style/MyMealPlannerTextStyle.SubTitles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginStart="8dp"
+                android:gravity="right"
+                android:text="1"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_servings_label"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_servings_label"
+                app:layout_constraintStart_toEndOf="@+id/iv_recipe_screen_ingredients_reset_ingredients"
+                app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_ingredients_servings_label" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_servings_label"
+                style="@style/MyMealPlannerTextStyle.SubTitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/recipe_ingredients_servings_title"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_increase_servings"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_increase_servings"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_increase_servings" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_increase_servings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:alpha="1"
+                android:elevation="6dp"
+                android:background="@drawable/button_shape_circle"
+                android:src="@mipmap/ic_add"
+                android:stateListAnimator="@animator/fab_raise"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_decrease_servings"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_decrease_servings"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_decrease_servings" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_decrease_servings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="8dp"
+                android:alpha="1"
+                android:background="@drawable/button_shape_circle"
+                android:elevation="6dp"
+                android:src="@mipmap/ic_substract"
+                android:stateListAnimator="@animator/fab_raise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_recipe_screen_ingredients_to_buy_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/card_shape_rectangle"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/cl_recipe_screen_ingredients_servings_data"
+        app:layout_constraintStart_toStartOf="@+id/cl_recipe_screen_ingredients_servings_data"
+        app:layout_constraintTop_toBottomOf="@+id/cl_recipe_screen_ingredients_servings_data">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_to_buy_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginVertical="1dp"
+            android:background="@color/colorPrimaryLight">
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_to_buy_title_table"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/shopping_list_to_buy_title"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse"
+                app:layout_constraintEnd_toStartOf="@+id/v_recipe_screen_ingredients_to_buy_title_inter_separator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_to_buy_title_inter_separator"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_to_buy_title_collapse"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:alpha="1"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="6dp"
+                android:src="@mipmap/ic_collapse"
+                android:stateListAnimator="@animator/fab_raise"
+                android:tint="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/v_iv_recipe_screen_ingredients_to_buy_title_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_iv_recipe_screen_ingredients_to_buy_title_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_to_buy_header_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginVertical="1dp">
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_to_buy_header_ingredients_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/shopping_list_header_ingredients_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_to_buy_header_quantity_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_to_buy_header_quantity_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_ingredients_to_buy_header_quantity_title" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_to_buy_header_quantity_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/shopping_list_header_quantity_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_to_buy_header_units_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_to_buy_header_units_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_ingredients_to_buy_header_units_title" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_to_buy_header_units_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/shopping_list_header_units_title"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all"
+                app:layout_constraintEnd_toStartOf="@+id/v_recipe_screen_ingredients_to_buy_header_inter_separator"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_to_buy_header_inter_separator"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_to_buy_header_check_all"
+                style="@style/MyMealPlannerIconButtons"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:alpha="1.0"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="6dp"
+                android:stateListAnimator="@animator/fab_raise"
+                app:layout_constraintBottom_toTopOf="@+id/v_recipe_screen_ingredients_to_buy_header_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_to_buy_header_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_to_buy_body_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="1dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_recipe_screen_ingredients_to_buy_body_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fl_recipe_screen_ingredients_already_bought"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/card_shape_rectangle"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ll_recipe_screen_ingredients_to_buy_data"
+        app:layout_constraintStart_toStartOf="@+id/ll_recipe_screen_ingredients_to_buy_data"
+        app:layout_constraintTop_toBottomOf="@+id/ll_recipe_screen_ingredients_to_buy_data">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_already_bought_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginVertical="1dp"
+            android:background="@color/colorPrimaryLight">
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_already_bought_title_table"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/shopping_list_already_bought_title"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_already_bought_title_collapse"
+                app:layout_constraintEnd_toStartOf="@+id/v_recipe_screen_ingredients_already_bought_title_inter_separator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_already_bought_title_collapse" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_already_bought_title_inter_separator"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/v_recipe_screen_ingredients_already_bought_title_separator"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_already_bought_title_collapse"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_already_bought_title_collapse" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_already_bought_title_collapse"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:alpha="1"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="6dp"
+                android:src="@mipmap/ic_collapse"
+                android:stateListAnimator="@animator/fab_raise"
+                android:tint="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/v_recipe_screen_ingredients_already_bought_title_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_already_bought_title_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_already_bought_header_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginVertical="1dp">
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_already_bought_header_ingredients_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/shopping_list_header_ingredients_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_already_bought_header_quantity_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_already_bought_header_quantity_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_ingredients_already_bought_header_quantity_title" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_already_bought_header_quantity_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/shopping_list_header_quantity_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_ingredients_already_bought_header_units_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_ingredients_already_bought_header_units_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_ingredients_already_bought_header_units_title" />
+
+            <TextView
+                android:id="@+id/tv_recipe_screen_ingredients_already_bought_header_units_title"
+                style="@style/MyMealPlannerTextStyle.TableTitles"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/shopping_list_header_units_title"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all"
+                app:layout_constraintEnd_toStartOf="@+id/v_recipe_screen_ingredients_already_bought_header_inter_separator"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_already_bought_header_inter_separator"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all"
+                app:layout_constraintEnd_toStartOf="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all"
+                app:layout_constraintTop_toTopOf="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all" />
+
+            <ImageView
+                android:id="@+id/iv_recipe_screen_ingredients_already_bought_header_remove_all"
+                style="@style/MyMealPlannerIconButtons"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:alpha="1"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="6dp"
+                android:src="@mipmap/ic_remove_all"
+                android:stateListAnimator="@animator/fab_raise"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/v_recipe_screen_ingredients_already_bought_header_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_recipe_screen_ingredients_already_bought_header_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_recipe_screen_ingredients_already_bought_body_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="1dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_recipe_screen_ingredients_already_bought_body_table"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="1dp"
+    android:paddingHorizontal="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_shopping_ingredient_name"
+        style="@style/MyMealPlannerTextStyle.SmallTitles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/shopping_list_header_ingredients_title"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_shopping_ingredient_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/tv_shopping_ingredient_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_shopping_ingredient_quantity" />
+
+    <TextView
+        android:id="@+id/tv_shopping_ingredient_quantity"
+        style="@style/MyMealPlannerTextStyle.SmallTitles"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/shopping_list_header_quantity_title"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_shopping_ingredient_units"
+        app:layout_constraintEnd_toStartOf="@+id/tv_shopping_ingredient_units"
+        app:layout_constraintTop_toTopOf="@+id/tv_shopping_ingredient_units" />
+
+    <TextView
+        android:id="@+id/tv_shopping_ingredient_units"
+        style="@style/MyMealPlannerTextStyle.SmallTitles"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/shopping_list_header_units_title"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shopping_ingredient_check"
+        app:layout_constraintEnd_toStartOf="@+id/v_shopping_ingredient_inter_separator"
+        app:layout_constraintTop_toTopOf="@+id/iv_shopping_ingredient_check" />
+
+    <View
+        android:id="@+id/v_shopping_ingredient_inter_separator"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shopping_ingredient_check"
+        app:layout_constraintEnd_toStartOf="@+id/iv_shopping_ingredient_check"
+        app:layout_constraintTop_toTopOf="@+id/iv_shopping_ingredient_check" />
+
+    <ImageView
+        android:id="@+id/iv_shopping_ingredient_check"
+        style="@style/MyMealPlannerIconButtons"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:alpha="1.0"
+        android:background="@drawable/card_shape_rectangle"
+        android:elevation="6dp"
+        android:stateListAnimator="@animator/fab_raise"
+        app:layout_constraintBottom_toTopOf="@+id/v_shopping_ingredient_separator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/v_shopping_ingredient_separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

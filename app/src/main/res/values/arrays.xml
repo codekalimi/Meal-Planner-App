@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="recipe_data_tab_titles">
+        <item>@string/recipe_ingredients_tab_title</item>
+        <item>@string/recipe_nutritional_facts_tab_title</item>
+        <item>@string/recipe_recipe_steps_tab_title</item>
+    </string-array>
+    <string-array name="mealtime_titles">
+        <item>@string/meal_menu_day_breakfast</item>
+        <item>@string/meal_menu_day_brunch</item>
+        <item>@string/meal_menu_day_lunch</item>
+        <item>@string/meal_menu_day_dinner</item>
+    </string-array>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App Material Design Colors-->
+    <color name="colorPrimary">#FFB300</color>
+    <color name="colorPrimaryLight">#FFE54C</color>
+    <color name="colorPrimaryLight2">#FFC977</color>
+    <color name="colorPrimaryDark">#C68400</color>
+    <color name="colorPrimaryDark2">#A16200</color>
+    <color name="colorAccent">#004CFF</color>
+    <color name="colorAccentDark">#0024CA</color>
+    <color name="colorAccentLight">#6D78FF</color>
+    <color name="colorBackground">#F2F2F2</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorError">#B00020</color>
+
+    <color name="onColorPrimary">#FFFFFF</color>
+    <color name="onColorAccent">#FFFFFF</color>
+    <color name="onColorBackground">#666666</color>
+    <color name="onColorSurface">#666666</color>
+    <color name="onColorError">#FFFFFF</color>
+
+    <!-- App Bottom Navigation Bar Colors -->
+    <color name="colorNavBarIconChecked">#666666</color>
+    <color name="colorNavBarIconNotChecked">#AAAAAA</color>
+
+    <!-- App CardView Colors-->
+    <color name="cardBackground">@android:color/white</color>
+    <color name="recipeCardBackground">#AAAAAA</color>
+
+</resources>

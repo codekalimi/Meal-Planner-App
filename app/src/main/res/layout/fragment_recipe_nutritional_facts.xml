@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="8dp"
+    tools:context=".ui.RecipeNutritionalFactsFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_recipe_screen_nutritional_facts_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_shape_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_recipe_screen_nutritional_facts_amount_title"
+            style="@style/MyMealPlannerTextStyle.SubTitles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/recipe_nutritional_facts_amount_per_serving_title"
+            app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_pro_daily_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_recipe_screen_nutritional_facts_pro_daily_title"
+            style="@style/MyMealPlannerTextStyle.SubTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/recipe_nutritional_facts_pro_daily_value_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_amount_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_amount_title" />
+
+        <LinearLayout
+            android:id="@+id/ll_recipe_screen_nutritional_facts_data"
+            android:layout_width="0dp"
+            android:layout_height="224dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_recipe_screen_nutritional_facts_pro_daily_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_recipe_screen_nutritional_facts_amount_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_amount_title">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_calories_daily_bar"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_calories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_calories_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_calories_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_calories_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="318"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_calories_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_calories_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_calories_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_calories_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_kcal_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_calories_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_calories_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_calories_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_calories_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="21"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_calories_value"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_calories_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_calories_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_calories_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_calories_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_calories_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_fat_daily_bar"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_fat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fat_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_fat_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fat_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="32"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fat_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_fat_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fat_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fat_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_g_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fat_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_fat_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fat_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fat_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="39"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fat_value"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_fat_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fat_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fat_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fat_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fat_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_carbs_daily_bar"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_carbs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_carbs_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_carbs_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_carbs_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="12"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_carbs_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_carbs_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_carbs_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_carbs_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_g_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_carbs_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_carbs_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_carbs_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_carbs_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="12"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_carbs_value"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_carbs_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_carbs_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_carbs_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_carbs_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_carbs_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_fiber_daily_bar"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_fiber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fiber_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_fiber_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fiber_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="5"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fiber_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_fiber_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fiber_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fiber_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_g_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fiber_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_fiber_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fiber_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fiber_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="21"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fiber_value"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_fiber_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fiber_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_fiber_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_fiber_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_fiber_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_protein_daily_bar"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_protein"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_protein_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_protein_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_protein_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="40"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_protein_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_protein_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_protein_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_protein_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_g_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_protein_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_protein_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_protein_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_protein_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="66"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_protein_value"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_protein_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_protein_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_protein_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_protein_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_protein_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_sugars_daily_bar"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_sugars"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sugars_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_sugar_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sugars_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="20"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sugars_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_sugars_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sugars_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sugars_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_g_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sugars_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_sugars_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sugars_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sugars_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="27"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sugars_title"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_sugars_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sugars_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sugars_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sugars_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sugars_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/table_row_shape_rectangle"
+                android:padding="1dp">
+
+                <View
+                    android:id="@+id/v_recipe_screen_nutritional_facts_sodium_daily_bar"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_recipe_screen_nutritional_facts_sodium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingVertical="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sodium_title"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/recipe_nutritional_facts_sodium_title"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sodium_value"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginStart="4dp"
+                        android:text="240"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sodium_title"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_sodium_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sodium_title" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sodium_units"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/recipe_nutritional_facts_mg_units"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sodium_value"
+                        app:layout_constraintStart_toEndOf="@+id/tv_recipe_screen_nutritional_facts_sodium_value"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sodium_value" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sodium_pro_day"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:gravity="right|end"
+                        android:text="9"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sodium_units"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_recipe_screen_nutritional_facts_sodium_procent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sodium_units" />
+
+                    <TextView
+                        android:id="@+id/tv_recipe_screen_nutritional_facts_sodium_procent"
+                        style="@style/MyMealPlannerTextStyle.SmallTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/recipe_nutritional_facts_procent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_recipe_screen_nutritional_facts_sodium_pro_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_recipe_screen_nutritional_facts_sodium_pro_day" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

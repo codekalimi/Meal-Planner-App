@@ -1,0 +1,103 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MyMealPlannerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+    </style>
+
+    <style name="MyMealPlannerTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="android:background">@color/colorSurface</item>
+        <item name="android:textColor">@color/onColorSurface</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.H1Titles">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.H1Titles.White">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/onColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.Titles">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.Titles.White">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/onColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.SubTitles">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.SubTitles.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.SmallTitles">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.MiniTitles">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.TableTitles">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyMealPlannerTextStyle.TableTitles.White">
+        <item name="android:textColor">@color/onColorPrimary</item>
+    </style>
+
+    <style name="MyMealPlannerTextButtons" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="MyMealPlannerIconButtons" parent="@style/Widget.AppCompat.Button">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="MyMealPlannerTextInputLayoutTheme" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/onColorSurface</item>
+        <item name="android:textSize">18sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/onColorPrimary</item>
+        <item name="colorControlNormal">@color/onColorSurface</item>
+        <item name="colorControlActivated">@color/colorPrimaryLight</item>
+    </style>
+
+
+    <style name="MyMealPlannerThemeEditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/onColorSurface</item>
+        <item name="colorControlActivated">@color/colorPrimaryLight</item>
+        <item name="colorControlHighlight">@color/colorPrimaryLight</item>
+    </style>
+
+</resources>

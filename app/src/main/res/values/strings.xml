@@ -1,0 +1,135 @@
+<resources>
+
+    <string name="app_name">MealPlanner</string>
+    <string name="app_shared_preferences">MyMealPlannerSharedPrefs</string>
+
+    <!-- Log-In Screen Strings -->
+    <string name="login_screen_screen_title">Login Screen</string>
+    <string name="login_screen_email_hint">Email</string>
+    <string name="login_screen_password_hint">Password</string>
+    <string name="login_screen_login_button">Sign in</string>
+    <string name="login_screen_or_label">or</string>
+    <string name="login_screen_register_title">Not a member? Register me!</string>
+    <string name="login_screen_forgot_password">Forgot your password?</string>
+    <string name="login_screen_failed_google_sign_in">Google sign in failed</string>
+
+    <!-- Sign-Up Screen Strings -->
+    <string name="sign_up_screen_title">Sign Up Screen</string>
+    <string name="sign_up_screen_sign_up_button">Sign up</string>
+    <string name="sign_up_screen_already_registered">Already registered. Login me!</string>
+    <string name="sign_up_screen_forgot_password">Forgot your password?</string>
+    <string name="sign_up_screen_authentication_failed">Authentication failed: %1$s</string>
+
+    <!-- Forgot Password Screen Strings -->
+    <string name="forgot_password_screen_title">Forgot Password Screen</string>
+    <string name="forgot_password_forgot_pass_title">Forgot Password?</string>
+    <string name="forgot_password_forgot_reset_pass_description">Please type your registered email to
+        send you the password reset instructions</string>
+    <string name="forgot_password_reset_password_button">Reset Password</string>
+    <string name="forgot_password_back_button"><![CDATA[<< Back]]></string>
+    <string name="forgot_password_reset_mail_sent">Email sent to your account with the password
+        reset instructions</string>
+    <string name="forgot_password_invalid_email">Enter your registered email</string>
+    <string name="forgot_password_reset_mail_not_sent">Failed to send reset email!</string>
+
+    <!-- Common log-in / sign-up Strings-->
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="enter_valid_email">Enter valid email address</string>
+    <string name="login_type" translatable="false">login-type</string>
+    <string name="default_login_type" translatable="false">not-logged</string>
+
+    <!-- App Bottom Navigation Bar Strings -->
+    <string name="nav_title_meal_plans">Meals</string>
+    <string name="nav_title_meal_planner">Calendar</string>
+    <string name="nav_title_shopping_list">Cart</string>
+    <string name="nav_title_recipe_list">Recipes</string>
+    <string name="nav_title_user_profile">User</string>
+
+    <!-- Meal Plans Screen Strings -->
+    <string name="meal_plans_screen_title">Meal Plans</string>
+    <string name="meal_plans_favourites_title">Favourites</string>
+    <string name="meal_plans_diet_title">Losing Weight</string>
+    <string name="meal_plans_veggies_title">Veggies</string>
+    <string name="meal_plans_show_more_button">Show More</string>
+    <string name="meal_plans_default_meal_plan_title">Meal Plan Title</string>
+
+    <!-- Meal Menu Day Screen Strings -->
+    <string name="meal_menu_day_breakfast">Breakfast</string>
+    <string name="meal_menu_day_brunch">Brunch</string>
+    <string name="meal_menu_day_lunch">Lunch</string>
+    <string name="meal_menu_day_dinner">Dinner</string>
+
+    <!-- Meal Planner Screen Strings -->
+    <string name="meal_planner_screen_title">Meal Planner</string>
+    <string name="meal_planner_default_date">15th of March, 2018</string>
+    <string name="meal_planner_breakfast_title">Breakfast</string>
+    <string name="meal_planner_breakfast_meal_hint">Breakfast Meal</string>
+    <string name="meal_planner_brunch_title">Brunch</string>
+    <string name="meal_planner_brunch_meal_hint">Brunch Meal</string>
+    <string name="meal_planner_lunch_title">Lunch</string>
+    <string name="meal_planner_lunch_meal_hint">Lunch Meal</string>
+    <string name="meal_planner_dinner_title">Dinner</string>
+    <string name="meal_planner_dinner_meal_hint">Dinner Meal</string>
+
+    <!-- Shopping List Screen Strings -->
+    <string name="shopping_list_screen_title">Shopping List</string>
+    <string name="shopping_list_to_buy_title">To buy</string>
+    <string name="shopping_list_already_bought_title">Already bought</string>
+    <string name="shopping_list_header_ingredients_title">Ingredients</string>
+    <string name="shopping_list_header_quantity_title">Qty</string>
+    <string name="shopping_list_header_units_title">Units</string>
+
+    <!-- Recipe List Screen Strings -->
+    <string name="recipe_list_screen_title">Recipe List</string>
+
+    <!-- My Account Screen Strings -->
+    <string name="my_account_screen_title">My Account</string>
+    <string name="my_account_default_name">John Doe</string>
+    <string name="my_account_statistics_default_explanation">Bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla</string>
+    <string name="my_account_send_feedback_title">Send feedback</string>
+    <string name="my_account_about_me_title">About me</string>
+    <string name="my_account_logout_me_title">Log out</string>
+    <string name="my_account_favourite_recipes_title">Fav Recipes</string>
+    <string name="my_account_my_meals_title">My Meals</string>
+    <string name="my_account_planned_meals_title">Planned Meals</string>
+
+    <!-- Recipe Activity Screen Strings -->
+    <string name="recipe_screen_title">Recipe</string>
+    <string name="recipe_screen_default_recipe_name">Recipe Name</string>
+    <string name="recipe_screen_default_recipe_author">\u0040Author</string>
+    <string name="recipe_nutritional_facts_tab_title">Nutritional Facts</string>
+    <string name="recipe_ingredients_tab_title">Ingredients</string>
+    <string name="recipe_recipe_steps_tab_title">Recipe Steps</string>
+
+    <!-- Recipe Screen + Ingredients Screen Strings -->
+    <string name="recipe_ingredients_servings_title">Servings</string>
+
+    <!-- Recipe Screen + Nutritional Facts Screen Strings -->
+    <string name="recipe_nutritional_facts_amount_per_serving_title">Amount per serving</string>
+    <string name="recipe_nutritional_facts_pro_daily_value_title">\u0025 daily value</string>
+    <string name="recipe_nutritional_facts_calories_title">Calories: </string>
+    <string name="recipe_nutritional_facts_fat_title">Fat: </string>
+    <string name="recipe_nutritional_facts_carbs_title">Carbs: </string>
+    <string name="recipe_nutritional_facts_fiber_title">Fiber: </string>
+    <string name="recipe_nutritional_facts_protein_title">Protein: </string>
+    <string name="recipe_nutritional_facts_sugar_title">Sugars: </string>
+    <string name="recipe_nutritional_facts_sodium_title">Sodium: </string>
+    <string name="recipe_nutritional_facts_kcal_units">kcal</string>
+    <string name="recipe_nutritional_facts_g_units">g</string>
+    <string name="recipe_nutritional_facts_mg_units">mg</string>
+    <string name="recipe_nutritional_facts_procent">\u0025</string>
+
+    <!-- Recipe Screen + Nutritional Facts Screen Strings -->
+    <string name="recipe_steps_default_step_number">1.</string>
+    <string name="recipe_steps_default_step_short_description">Recipe step description</string>
+    <string name="recipe_steps_default_step_description">Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Aperiam atque ipsam nesciunt nihil quaerat. At consequuntur dolores earum
+        error eveniet facere fuga hic illo impedit libero, modi nostrum officiis porro quam soluta
+        voluptatibus voluptatum. Asperiores corporis fugiat molestiae non voluptatibus. Architecto
+        culpa hic illum ipsam laudantium? Assumenda dignissimos dolores facere.</string>
+
+
+</resources>

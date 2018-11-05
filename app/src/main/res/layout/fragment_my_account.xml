@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="60dp"
+    android:background="@color/colorBackground"
+    tools:context=".ui.MyAccountFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_my_account_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctl_my_account_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginStart="72dp">
+
+            <FrameLayout
+                android:id="@+id/fl_my_account_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <com.udacity.mregtej.mymealplanner.ui.utils.RoundedImageView
+                        android:id="@+id/iv_my_account_user_photo"
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tv_my_account_user_name"
+                        style="@style/MyMealPlannerTextStyle.Titles.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:textStyle="bold"
+                        android:text="@string/my_account_default_name"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_my_account_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:theme="@style/MyMealPlannerTheme"
+                app:contentInsetStart="72dp"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/colorBackground"
+        android:fillViewport="true"
+        android:nestedScrollingEnabled="true" >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_my_account_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_my_account_resume_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_shape_rectangle"
+                android:padding="16dp"
+                android:elevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_my_account_favourite_recipes_title"
+                    style="@style/MyMealPlannerTextStyle.SmallTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/my_account_favourite_recipes_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_my_account_my_meals_title"
+                    style="@style/MyMealPlannerTextStyle.SmallTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/my_account_my_meals_title"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_my_account_favourite_recipes_title"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_my_account_planned_meals_title"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_account_favourite_recipes_title"
+                    app:layout_constraintTop_toTopOf="@+id/tv_my_account_favourite_recipes_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_account_planned_meals_title"
+                    style="@style/MyMealPlannerTextStyle.SmallTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/my_account_planned_meals_title"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_my_account_my_meals_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_my_account_my_meals_title"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tv_my_account_favourite_recipes_number"
+                    style="@style/MyMealPlannerTextStyle.H1Titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="25"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_my_account_favourite_recipes_title"
+                    app:layout_constraintStart_toStartOf="@+id/tv_my_account_favourite_recipes_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_account_favourite_recipes_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_account_my_meals_number"
+                    style="@style/MyMealPlannerTextStyle.H1Titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_my_account_my_meals_title"
+                    app:layout_constraintStart_toStartOf="@+id/tv_my_account_my_meals_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_account_my_meals_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_account_planned_meals_number"
+                    style="@style/MyMealPlannerTextStyle.H1Titles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_my_account_planned_meals_title"
+                    app:layout_constraintStart_toStartOf="@+id/tv_my_account_planned_meals_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_account_planned_meals_title" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_my_account_additional_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="6dp"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_my_account_resume_data"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:id="@+id/iv_my_account_statistics"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/im_statistics"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/iv_my_account_statistics_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="24dp"
+                    android:maxLines="6"
+                    android:text="@string/my_account_statistics_default_explanation"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_my_account_statistics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_my_account_statistics"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_account_statistics" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_my_account_statistics_description"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_account_statistics"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_account_statistics">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/bt_my_account_send_feedback"
+                            style="@style/MyMealPlannerIconButtons"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@mipmap/ic_feedback"
+                            android:elevation="6dp" />
+
+                        <TextView
+                            android:id="@+id/tv_my_account_send_feedback_title"
+                            style="@style/MyMealPlannerTextStyle.SmallTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/my_account_send_feedback_title" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/bt_my_account_about_me"
+                            style="@style/MyMealPlannerIconButtons"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@mipmap/ic_about_me"
+                            android:elevation="6dp" />
+
+                        <TextView
+                            android:id="@+id/tv_my_account_about_me_title"
+                            style="@style/MyMealPlannerTextStyle.SmallTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/my_account_about_me_title" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/bt_my_account_logout"
+                            style="@style/MyMealPlannerIconButtons"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@mipmap/ic_logout"
+                            android:elevation="6dp" />
+
+                        <TextView
+                            android:id="@+id/tv_my_account_logout_title"
+                            style="@style/MyMealPlannerTextStyle.SmallTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/my_account_logout_me_title" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

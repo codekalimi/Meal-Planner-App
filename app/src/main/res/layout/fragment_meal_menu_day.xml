@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.MealMenuDayFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_meal_menu_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1" >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_meal_menu_day_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="1dp"
+                android:stretchMode="columnWidth" />
+
+            <!--
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_meal_menu_day_breakfast"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_meal_menu_day_breakfast_title"
+                    style="@style/MyMealPlannerTextStyle.Titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/meal_menu_day_breakfast"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_meal_menu_day_breakfast_update"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_meal_menu_day_breakfast_update" />
+
+                <ImageView
+                    android:id="@+id/iv_meal_menu_day_breakfast_update"
+                    style="@style/MyMealPlannerIconButtons"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:alpha="1"
+                    android:background="@drawable/button_shape_circle"
+                    android:elevation="4dp"
+                    android:src="@mipmap/ic_update"
+                    android:stateListAnimator="@animator/fab_raise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_meal_menu_day_breakfast_recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal_menu_day_breakfast_update">
+
+                    <FrameLayout
+                        android:id="@+id/fl_meal_menu_day_breakfast_recipe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_meal_menu_day_breakfast_recipe_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_shape_rectangle"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/im_recipe" />
+
+                        <View
+                            android:id="@+id/v_meal_menu_day_breakfast_recipe_photo_scrim"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/image_scrim_gradient" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_meal_menu_day_breakfast_recipe_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_meal_menu_day_breakfast_recipe_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="Recipe Name"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_meal_menu_day_brunch"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_meal_menu_day_brunch_title"
+                    style="@style/MyMealPlannerTextStyle.Titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/meal_menu_day_brunch"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_meal_menu_day_brunch_update"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_meal_menu_day_brunch_update" />
+
+                <ImageView
+                    android:id="@+id/iv_meal_menu_day_brunch_update"
+                    style="@style/MyMealPlannerIconButtons"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:alpha="1"
+                    android:background="@drawable/button_shape_circle"
+                    android:elevation="4dp"
+                    android:src="@mipmap/ic_update"
+                    android:stateListAnimator="@animator/fab_raise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_meal_menu_day_brunch_recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal_menu_day_brunch_update">
+
+                    <FrameLayout
+                        android:id="@+id/fl_meal_menu_day_brunch_recipe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_meal_menu_day_brunch_recipe_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_shape_rectangle"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/im_recipe" />
+
+                        <View
+                            android:id="@+id/v_meal_menu_day_brunch_recipe_photo_scrim"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/image_scrim_gradient" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_meal_menu_day_brunch_recipe_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_meal_menu_day_brunch_recipe_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="Recipe Name"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_meal_menu_day_lunch"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+                <TextView
+                    android:id="@+id/tv_meal_menu_day_lunch_title"
+                    style="@style/MyMealPlannerTextStyle.Titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/meal_menu_day_lunch"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_meal_menu_day_lunch_update"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_meal_menu_day_lunch_update" />
+
+                <ImageView
+                    android:id="@+id/iv_meal_menu_day_lunch_update"
+                    style="@style/MyMealPlannerIconButtons"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:alpha="1"
+                    android:background="@drawable/button_shape_circle"
+                    android:elevation="4dp"
+                    android:src="@mipmap/ic_update"
+                    android:stateListAnimator="@animator/fab_raise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_meal_menu_day_lunch_recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal_menu_day_lunch_update">
+
+                    <FrameLayout
+                        android:id="@+id/fl_meal_menu_day_lunch_recipe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_meal_menu_day_lunch_recipe_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_shape_rectangle"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/im_recipe" />
+
+                        <View
+                            android:id="@+id/v_meal_menu_day_lunch_recipe_photo_scrim"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/image_scrim_gradient" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_meal_menu_day_lunch_recipe_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_meal_menu_day_lunch_recipe_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="Recipe Name"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_meal_menu_day_dinner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_shape_rectangle"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+                <TextView
+                    android:id="@+id/tv_meal_menu_day_dinner_title"
+                    style="@style/MyMealPlannerTextStyle.Titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/meal_menu_day_dinner"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_meal_menu_day_dinner_update"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_meal_menu_day_dinner_update" />
+
+                <ImageView
+                    android:id="@+id/iv_meal_menu_day_dinner_update"
+                    style="@style/MyMealPlannerIconButtons"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:alpha="1"
+                    android:background="@drawable/button_shape_circle"
+                    android:elevation="4dp"
+                    android:src="@mipmap/ic_update"
+                    android:stateListAnimator="@animator/fab_raise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_meal_menu_day_dinner_recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal_menu_day_dinner_update">
+
+                    <FrameLayout
+                        android:id="@+id/fl_meal_menu_day_dinner_recipe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_meal_menu_day_dinner_recipe_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_shape_rectangle"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/im_recipe" />
+
+                        <View
+                            android:id="@+id/v_meal_menu_day_dinner_recipe_photo_scrim"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/image_scrim_gradient" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_meal_menu_day_dinner_recipe_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_meal_menu_day_dinner_recipe_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="Recipe Name"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+                -->
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_meal_menu_day_schedule"
+        style="@style/MyMealPlannerIconButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:foregroundGravity="center"
+        android:layout_margin="12dp"
+        android:alpha="1"
+        android:background="@drawable/button_shape_circle"
+        android:elevation="4dp"
+        android:src="@mipmap/ic_schedule"
+        android:stateListAnimator="@animator/fab_raise"
+        app:fabSize="normal"
+        app:backgroundTint="@color/colorPrimary"/>
+
+</android.support.design.widget.CoordinatorLayout>
